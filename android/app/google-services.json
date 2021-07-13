@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "632841032224",
+    "project_id": "multymccarthys",
+    "storage_bucket": "multymccarthys.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632841032224:android:8f6dadd7800bde595d6245",
+        "android_client_info": {
+          "package_name": "com.example.multymccarthys"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632841032224-quge22c7bgbogu64lnqud5h0ofrta2nt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8LRW7-AERsrX5wCcaoOEh04wxSHokwDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632841032224-quge22c7bgbogu64lnqud5h0ofrta2nt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
