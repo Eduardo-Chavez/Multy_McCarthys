@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:multymccarthys/auth/auth.dart';
-import 'food_body.dart';
-import 'foot_top.dart';
+import 'package:multymccarthys/widgets/food_body.dart';
+import 'package:multymccarthys/widgets/foot_top.dart';
 
 
 class HomePageRecipes extends StatefulWidget {
@@ -50,7 +50,7 @@ class _HomePageRecipesState extends State<HomePageRecipes> {
             alignment: Alignment.topCenter,
             child: Container(
               child: Text(
-                'Recetas Globales McCarthy´s',
+                'Recetas GLOBALES McCarthy´s',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 18.0,

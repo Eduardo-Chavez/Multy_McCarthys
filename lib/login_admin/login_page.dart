@@ -152,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Recipes'),
+        title: Text('Multy McCarthy´s'),
       ),
       body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -167,7 +167,7 @@ class _LoginPageState extends State<LoginPage> {
                         children: [
                           Padding(padding: EdgeInsets.only(top: 15.0)),
                           Text(
-                            'Recetas McCarthy´s \n Mis recetas',
+                            'Multy McCarthy´s',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 17.0,
@@ -188,11 +188,11 @@ List<Widget> buildInputs() {
         TextFormField(
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
-            labelText: 'Email',
+            labelText: 'Correo',
             icon: Icon(FontAwesomeIcons.envelope),
           ),
           validator: (value) =>
-          value.isEmpty ? 'El campo Email está vacio' : null,
+          value.isEmpty ? 'El campo Correo está vacio' : null,
           onSaved: (value) => _email = value.trim(),
         ),
         Padding(
@@ -310,7 +310,7 @@ List<Widget> buildInputs() {
                 ),
               )),
           validator: (value) => value.isEmpty
-              ? 'El campo password debe tener\nal menos 6 caracteres'
+              ? 'El campo Contraseña debe tener\nal menos 6 caracteres'
               : null,
           onSaved: (value) => _password = value.trim(),
         ),
@@ -331,7 +331,7 @@ List<Widget> buildInputs() {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
-                "Ingresar",
+                "Ingresar a Multy McCarthy´s",
                 style: TextStyle(color: Colors.white, fontSize: 15.0),
               ),
               Padding(
@@ -351,7 +351,7 @@ List<Widget> buildInputs() {
         ),
         FlatButton(
           child: Text(
-            'Crear una cuenta',//create new acount
+            'Crear una cuenta en Multy McCarthy´s',//create new acount
             style: TextStyle(fontSize: 20.0, color: Colors.grey),
           ),
           onPressed: _irRegistro,
@@ -386,7 +386,7 @@ List<Widget> buildInputs() {
         ),
         FlatButton(
           child: Text(
-            '¿Ya tienes una Cuenta?',
+            '¿Ya tienes Cuenta en Multy McCarthy´s?',
             style: TextStyle(fontSize: 20.0, color: Colors.grey),
           ),
           onPressed: _irLogin,

@@ -176,7 +176,7 @@ class _MyAddPageState extends State<MyAddPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Page'),
+        title: Text('Agregar platillo GOLBAL McCarthy´s'),
       ),
       body: ModalProgressHUD(
         inAsyncCall: _isInAsyncCall,
@@ -210,7 +210,7 @@ class _MyAddPageState extends State<MyAddPage> {
                     )
                   ],
                 ),
-                Text('click para cambiar foto'),
+                Text('Click para cambiar foto'),
 
                 Padding(
                   padding: EdgeInsets.only(top: 10),
@@ -218,13 +218,13 @@ class _MyAddPageState extends State<MyAddPage> {
                 TextFormField(
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'name',
+                    hintText: 'Nombre del platillo',
                     fillColor: Colors.grey[300],
                     filled: true,
                   ),
                   validator: (value) {
                     if (value.isEmpty) {
-                      return 'Please enter some text';
+                      return 'Por favor ingresa el nombre del platillo';
                     }
                   },
                   onSaved: (value) => name = value.trim(),
@@ -233,13 +233,13 @@ class _MyAddPageState extends State<MyAddPage> {
                   maxLines: 5,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'recipe',
+                    hintText: 'Descripcion del platillo',
                     fillColor: Colors.grey[300],
                     filled: true,
                   ),
                   validator: (value) {
                     if (value.isEmpty) {
-                      return 'Please enter some recipe';
+                      return 'Por favor ingresa la descripcion del platillo';
                     }
                   },
                   onSaved: (value) => recipe = value,
@@ -249,7 +249,7 @@ class _MyAddPageState extends State<MyAddPage> {
                   children: <Widget>[
                     RaisedButton(
                       onPressed: _enviar,
-                      child: Text('Create', style: TextStyle(color: Colors.white)),
+                      child: Text('Crear Platillo', style: TextStyle(color: Colors.white)),
                       color: Colors.green,
                     ),
                   ],)

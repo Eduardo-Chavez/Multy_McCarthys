@@ -1,5 +1,7 @@
+import 'package:multymccarthys/model/user_model.dart';
 import 'package:multymccarthys/pages/admin/show_recipe.dart';
 import 'package:multymccarthys/pages/calculator_page.dart';
+import 'package:multymccarthys/pages/empleados/lits_users.dart';
 import 'package:multymccarthys/pages/information/view_information.dart';
 import 'package:multymccarthys/pages/maps.dart';
 import 'package:multymccarthys/pages/myrecipes/list_my_recipe.dart';
@@ -15,7 +17,7 @@ abstract class Content {
    Future<Information> information();
    Future<Calculator> calculator();
    //Future<Banner> banner();
-   //Future<Empleado> empleado();
+   Future<ViewUser> empleado();
 
  }
 
@@ -34,10 +36,11 @@ abstract class Content {
     return Information();
   }
 
-  /*Future<Empleado> empleado() async {
-    return Empleado();
+  Future<ViewUser> empleado() async {
+    return ViewUser();
   }
 
+  /*
   Future<Banner> banner() async {
     return Banner();
   }*/

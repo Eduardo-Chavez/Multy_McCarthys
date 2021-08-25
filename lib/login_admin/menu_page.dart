@@ -63,17 +63,17 @@ class _HomePageState extends State<HomePage> {
                 UserAccountsDrawerHeader(
                   currentAccountPicture: CircleAvatar(
                     maxRadius: 10.0,
-                    backgroundImage: AssetImage('assets/images/logoMC.jpg'),
+                    backgroundImage: AssetImage('assets/images/logoMc.jpg'),
                     //backgroundImage: NetworkImage('https://abc'),
                   ),
                   accountName: Text(
-                    '$usuario',
+                    'Bienvenido $usuario',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.green
                     ),
                   ),
                   accountEmail: Text('$usuarioEmail',
-                      style: TextStyle(color: Colors.white)),
+                      style: TextStyle(color: Colors.green)),
                   decoration: BoxDecoration(
                       color: Color(0xFF262F3D),
                       image: DecorationImage(
@@ -154,10 +154,10 @@ class _HomePageState extends State<HomePage> {
                 ListTile(
                   onTap: () {
                     Navigator.of(context).pop();
-                     page.mapa().then((value) {
+                     page.empleado().then((value) {
                       print(value);
                       setState(() {
-                        contentPage = value;
+                        contentPage = value as Widget;
                       });
                     });
                   },

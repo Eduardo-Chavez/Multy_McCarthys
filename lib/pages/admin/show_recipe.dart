@@ -70,7 +70,7 @@ class _InicioPageState extends State<InicioPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            '\nAgrega un recipe.\n',
+                            '\nAgregar Platillo McMcarthy´s.\n',
                             style: TextStyle(fontSize: 24, color: Colors.blue),
                           )
                         ],

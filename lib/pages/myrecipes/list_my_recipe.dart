@@ -74,7 +74,7 @@ class _ListMyRecipeState extends State<ListMyRecipe> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            '\nAgregar Platillo.\n',
+                            '\nAgregar Platillo McMcarthy´s.\n',
                             style: TextStyle(fontSize: 24, color: Colors.blue),
                           )
                         ],

@@ -172,7 +172,7 @@ class _EditRecipeState extends State<EditRecipe> {
                       'recipe': _recipe,                      
                     }).then((value) => Navigator.of(context).pop())
                     .catchError((onError) =>
-                        print('Error al editar la receta en la bd'));
+                        print('Error al editar el platillo'));
                 _isInAsyncCall = false;
               });
             });
@@ -196,13 +196,11 @@ class _EditRecipeState extends State<EditRecipe> {
     }
   }                           
 
-
-
   @override
   Widget build(BuildContext context) {
      return Scaffold(
         appBar: AppBar(
-          title: Text('Recipe Edit'),
+          title: Text('Editar platillo McCarthy´s'),
         ),
         body: ModalProgressHUD(
             inAsyncCall: _isInAsyncCall,
@@ -238,20 +236,20 @@ class _EditRecipeState extends State<EditRecipe> {
                       keyboardType: TextInputType.text,
                       initialValue: _name,
                       decoration: InputDecoration(
-                          labelText: 'Name',
+                          labelText: 'Nombre del platillo',
                          ),
                       validator: (value) =>
-                          value.isEmpty ? 'El campo Nombre esta vacio' : null,
+                          value.isEmpty ? 'Por favor ingresa el nombre del platillo' : null,
                       onSaved: (value) => _name = value.trim(),
                     ),
                     TextFormField(
                       keyboardType: TextInputType.text,
                       initialValue: _recipe,
                       decoration: InputDecoration(
-                          labelText: 'Recipe',
+                          labelText: 'Descripcion del platillo',
                          ),
                       validator: (value) =>
-                          value.isEmpty ? 'El campo Nombre esta vacio' : null,
+                          value.isEmpty ? 'Por favor ingresa la descripcion del platillo' : null,
                       onSaved: (value) => _recipe = value.trim(),
                     ),
                     Padding(
