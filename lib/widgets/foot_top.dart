@@ -1,8 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:multymccarthys/auth/auth.dart';
-import 'package:multymccarthys/model/recipe_model.dart';
-//import 'package:multymccarthys/pages/admin/ver_receta.dart';
+//import 'package:recipes/pages/admin/ver_receta.dart';
 
 class FoodTop extends StatefulWidget {
   @override
@@ -51,11 +50,6 @@ class _FoodTopState extends State<FoodTop> {
                               children: <Widget>[
                                 InkWell(
                                   onTap: (){
-                                    Recipe recipe = Recipe(
-                                          name: document['name'].toString(),
-                                          image: document['image'].toString(),
-                                          recipe: document['recipe'].toString(),
-                                        );
                                         // Navigator.push(
                                         //     context,
                                         //     MaterialPageRoute(

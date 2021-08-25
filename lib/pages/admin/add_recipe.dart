@@ -142,7 +142,7 @@ class _MyAddPageState extends State<MyAddPage> {
                 })
                     .then((value) => Navigator.of(context).pop())
                     .catchError((onError) =>
-                    print('Error en registrar el usuari en la bd'));
+                    print('Error en registrar el usuario en la bd'));
                 _isInAsyncCall = false;
               });
             });
@@ -158,7 +158,7 @@ class _MyAddPageState extends State<MyAddPage> {
           })
               .then((value) => Navigator.of(context).pop())
               .catchError(
-                  (onError) => print('Error en registrar el usuari en la bd'));
+                  (onError) => print('Error en registrar el usuario en la bd'));
           _isInAsyncCall = false;
         }
       }).catchError((onError) => _isInAsyncCall = false);

@@ -11,10 +11,11 @@ import 'package:multymccarthys/model/recipe_model.dart';
 
 class EditMyRecipe extends StatefulWidget {
 
-  EditMyRecipe({this.recipe, this.idRecipe, this.uid});
+  EditMyRecipe({this.recipe, this.idRecipe, this.uid, this.price});
   final String idRecipe;
   final String uid;
   final Recipe recipe;//model/
+  final String price;
 
   @override
   _EditMyRecipeState createState() => _EditMyRecipeState();
@@ -29,12 +30,13 @@ class _EditMyRecipeState extends State<EditMyRecipe> {
   final formKey = GlobalKey<FormState>();
   String _name;
   String _recipe;
+  String _price;
   File _image; //
   String urlFoto = '';
   Auth auth = Auth();
   bool _isInAsyncCall = false;
   String usuario;
- 
+
   BoxDecoration box = BoxDecoration(
                             border: Border.all(width: 1.0, color: Colors.black),
                             shape: BoxShape.circle,
@@ -46,7 +48,8 @@ class _EditMyRecipeState extends State<EditMyRecipe> {
   void initState() {
     setState(() {
       this._name = widget.recipe.name;
-      this._recipe = widget.recipe.recipe;      
+      this._recipe = widget.recipe.recipe; 
+      this._price = widget.recipe.price;     
       captureImage(null, widget.recipe.image);
     });
 
@@ -88,7 +91,7 @@ print('uid receta : '+widget.idRecipe);
 
       });
     } else {
-      print('descarga la imagen');
+      print('Descarga la imagen');
       _downloadFile(url, widget.recipe.name).then((onValue) {
         _image = onValue;
         setState(() {
@@ -176,7 +179,8 @@ print('uid receta : '+widget.idRecipe);
                     .document(widget.idRecipe).updateData({
                       'name': _name,
                       'image': urlFoto,
-                      'recipe': _recipe,                      
+                      'recipe': _recipe,
+                      'price': _price,                      
                     }).then((value) => Navigator.of(context).pop())
                     .catchError((onError) =>
                         print('Error al editar la receta en la bd'));
@@ -192,7 +196,8 @@ print('uid receta : '+widget.idRecipe);
               .add({
                 'name': _name,
                 'image': urlFoto,
-                'recipe': _recipe
+                'recipe': _recipe,
+                'price': _price,
               })
               .then((value) => Navigator.of(context).pop())
               .catchError(
@@ -210,7 +215,7 @@ print('uid receta : '+widget.idRecipe);
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('My edit recipe'),
+          title: Text('Editar platillo'),
         ),
         body: ModalProgressHUD(
             inAsyncCall: _isInAsyncCall,
@@ -247,21 +252,31 @@ print('uid receta : '+widget.idRecipe);
                       keyboardType: TextInputType.text,
                       initialValue: _name,
                       decoration: InputDecoration(
-                          labelText: 'Name',
+                          labelText: 'Nombre del Platillo',
                          ),
                       validator: (value) =>
-                          value.isEmpty ? 'El campo Nombre esta vacio' : null,
+                          value.isEmpty ? 'Por favor ingresa el nombre del platillo' : null,
                       onSaved: (value) => _name = value.trim(),
                     ),
                     TextFormField(
                       keyboardType: TextInputType.text,
                       initialValue: _recipe,
                       decoration: InputDecoration(
-                          labelText: 'Recipe',
+                          labelText: 'Descripcion del Platillo',
                          ),
                       validator: (value) =>
-                          value.isEmpty ? 'El campo Nombre esta vacio' : null,
+                          value.isEmpty ? 'Por favor ingresa la descripcion del platillo' : null,
                       onSaved: (value) => _recipe = value.trim(),
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.text,
+                      initialValue: _price,
+                      decoration: InputDecoration(
+                          labelText: 'Precio del Platillo',
+                         ),
+                      validator: (value) =>
+                          value.isEmpty ? 'Por favor ingresa el precio del platillo' : null,
+                      onSaved: (value) => _price = value.trim(),
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 50),

@@ -1,6 +1,8 @@
 import 'package:multymccarthys/pages/admin/show_recipe.dart';
-import 'package:multymccarthys/pages/maps_page.dart';
-import 'package:multymccarthys/pages/myrecipes/lits_my_recipe.dart';
+import 'package:multymccarthys/pages/calculator_page.dart';
+import 'package:multymccarthys/pages/information/view_information.dart';
+import 'package:multymccarthys/pages/maps.dart';
+import 'package:multymccarthys/pages/myrecipes/list_my_recipe.dart';
 import 'package:multymccarthys/widgets/home_page.dart';
 
 abstract class Content {
@@ -10,6 +12,10 @@ abstract class Content {
    Future<ListMyRecipe> myrecipe(String id);
    Future<MapsPage> mapa(); 
    Future<InicioPage> admin();
+   Future<Information> information();
+   Future<Calculator> calculator();
+   //Future<Banner> banner();
+   //Future<Empleado> empleado();
 
  }
 
@@ -23,8 +29,23 @@ abstract class Content {
    Future<MapsPage> mapa() async {
     return MapsPage();
   }
-  
 
+  Future<Information> information() async {
+    return Information();
+  }
+
+  /*Future<Empleado> empleado() async {
+    return Empleado();
+  }
+
+  Future<Banner> banner() async {
+    return Banner();
+  }*/
+
+  Future<Calculator> calculator() async {
+    return Calculator();
+  }
+  
   Future<InicioPage> admin() async {
     return InicioPage();
   }

@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                 UserAccountsDrawerHeader(
                   currentAccountPicture: CircleAvatar(
                     maxRadius: 10.0,
-                    backgroundImage: AssetImage('assets/images/cocina.jpg'),
+                    backgroundImage: AssetImage('assets/images/logoMC.jpg'),
                     //backgroundImage: NetworkImage('https://abc'),
                   ),
                   accountName: Text(
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                       image: DecorationImage(
                         alignment: Alignment(1.0, 0),
                         image: AssetImage(
-                          'assets/images/misanplas.jpg', 
+                          'assets/images/irlanda.png', 
                         ),
                         fit: BoxFit.scaleDown, //BoxFit.fitHeight
                       )),
@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                     });
                   },
                   leading: Icon(Icons.home, color: Color(0xFF4FC3F7),),
-                  title: Text('Home', style: TextStyle(color: Colors.white),),
+                  title: Text('Menu McCarthy´s', style: TextStyle(color: Colors.white),),
                 ),
                 Divider(height: 2.0, color: Colors.white,),
                  ListTile(
@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                     });
                   },
                   leading: Icon(FontAwesomeIcons.pizzaSlice, color: Color(0xFF4FC3F7),),
-                  title: Text('My Recipe', style: TextStyle(color: Color(0xFF4FC3F7)),),
+                  title: Text('Especialidades McCarthy´s', style: TextStyle(color: Color(0xFF4FC3F7)),),
                 ),   
                 ListTile(
                   onTap: () {
@@ -122,8 +122,8 @@ class _HomePageState extends State<HomePage> {
                       });
                     });
                   },
-                  leading: Icon(Icons.contact_mail, color: Color(0xFF4FC3F7),),
-                  title: Text('Admin', style: TextStyle(color: Color(0xFF4FC3F7)),),
+                  leading: Icon(FontAwesomeIcons.hamburger, color: Color(0xFF4FC3F7),),
+                  title: Text('Menu Global McCarthy´s', style: TextStyle(color: Color(0xFF4FC3F7)),),
                 ),               
                 ListTile(
                   onTap: () {
@@ -136,10 +136,62 @@ class _HomePageState extends State<HomePage> {
                     });
                   },
                   leading: Icon(FontAwesomeIcons.map, color: Color(0xFF4FC3F7),),
-                  title: Text('Mapa Tiendas', style: TextStyle(color: Color(0xFF4FC3F7)),),
+                  title: Text('Mapa de la sucursal McCarthy´s', style: TextStyle(color: Color(0xFF4FC3F7)),),
+                ),
+                ListTile(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                     page.mapa().then((value) {
+                      print(value);
+                      setState(() {
+                        contentPage = value;
+                      });
+                    });
+                  },
+                  leading: Icon(FontAwesomeIcons.image, color: Color(0xFF4FC3F7),),
+                  title: Text('Banners', style: TextStyle(color: Color(0xFF4FC3F7)),),
+                ),
+                ListTile(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                     page.mapa().then((value) {
+                      print(value);
+                      setState(() {
+                        contentPage = value;
+                      });
+                    });
+                  },
+                  leading: Icon(FontAwesomeIcons.users, color: Color(0xFF4FC3F7),),
+                  title: Text('Empleados', style: TextStyle(color: Color(0xFF4FC3F7)),),
+                ),
+                 ListTile(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                     page.calculator().then((value) {
+                      print(value);
+                      setState(() {
+                        contentPage = value;
+                      });
+                    });
+                  },
+                  leading: Icon(FontAwesomeIcons.calculator, color: Color(0xFF4FC3F7),),
+                  title: Text('Calculadora MultyMcCarthy´s', style: TextStyle(color: Color(0xFF4FC3F7)),),
+                ),
+                ListTile(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                     page.information().then((value) {
+                      print(value);
+                      setState(() {
+                        contentPage = value;
+                      });
+                    });
+                  },
+                  leading: Icon(FontAwesomeIcons.info, color: Color(0xFF4FC3F7),),
+                  title: Text('Mas sobre nosotros', style: TextStyle(color: Color(0xFF4FC3F7)),),
                 ),             
                 ListTile(
-                  title: Text('Salir', style: TextStyle(color: Color(0xFF4FC3F7)),),
+                  title: Text('Cerrar Sesión', style: TextStyle(color: Color(0xFF4FC3F7)),),
                   leading: Icon(Icons.exit_to_app, color: Color(0xFF4FC3F7),),        
                   onTap: () {
                     Navigator.of(context).pop();
@@ -151,7 +203,7 @@ class _HomePageState extends State<HomePage> {
           )),
      appBar: AppBar(
        backgroundColor: PrimaryColor,
-        title: Text('Recetas'),        
+        title: Text('Multy McCarthy´s'),        
          actions: <Widget>[
           IconButton(
             icon: Icon(Icons.grid_on),

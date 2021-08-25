@@ -167,7 +167,7 @@ class _LoginPageState extends State<LoginPage> {
                         children: [
                           Padding(padding: EdgeInsets.only(top: 15.0)),
                           Text(
-                            'Recetas Mundiales \n Mis recetas',
+                            'Recetas McCarthy´s \n Mis recetas',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 17.0,

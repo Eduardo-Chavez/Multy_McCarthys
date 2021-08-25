@@ -3,9 +3,10 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:multymccarthys/auth/auth.dart';
 import 'package:multymccarthys/model/recipe_model.dart';
-import 'package:multymccarthys/pages/myrecipes/add_my_recipe.dart';
-import 'package:multymccarthys/pages/myrecipes/edit_my_recipe.dart';
-import 'package:multymccarthys/pages/myrecipes/view_my_recipe.dart';
+import 'add_my_recipe.dart';
+import 'edit_my_recipe.dart';
+import 'view_my_recipe.dart';
+
 
 class CommonThings {
   static Size size;
@@ -57,7 +58,7 @@ class _ListMyRecipeState extends State<ListMyRecipe> {
         stream: Firestore.instance.collection('usuarios').document(widget.id).collection('mycolrecipes').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
-            return Text("loading....");
+            return Text("Cargando....");
           } else {
             if (snapshot.data.documents.length == 0) {
               return Center(
@@ -73,7 +74,7 @@ class _ListMyRecipeState extends State<ListMyRecipe> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            '\nAdd my recipe.\n',
+                            '\nAgregar Platillo.\n',
                             style: TextStyle(fontSize: 24, color: Colors.blue),
                           )
                         ],
@@ -170,6 +171,7 @@ class _ListMyRecipeState extends State<ListMyRecipe> {
                               name: document['name'].toString(),
                               image: document['image'].toString(),
                               recipe: document['recipe'].toString(),
+                              price: document['price'].toString(),
                             );
                             Navigator.push(
                                 context,

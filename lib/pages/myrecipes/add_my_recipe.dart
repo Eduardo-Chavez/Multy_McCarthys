@@ -43,6 +43,7 @@ class _MyAddRecipeState extends State<MyAddRecipe> {
   String uid;
   String recipe;
   String usuario;
+  String price;
 
   Future captureImage(SelectSource opcion) async {
     File image;
@@ -140,6 +141,7 @@ class _MyAddRecipeState extends State<MyAddRecipe> {
                       'name': name,
                       'image': urlFoto,
                       'recipe': recipe,
+                      'price': price,
                     })
                     .then((value) => Navigator.of(context).pop())
                     .catchError((onError) =>
@@ -157,6 +159,7 @@ class _MyAddRecipeState extends State<MyAddRecipe> {
                 'name': name,
                 'image': urlFoto,
                 'recipe': recipe,
+                'price': price,
               })
               .then((value) => Navigator.of(context).pop())
               .catchError(
@@ -178,7 +181,7 @@ class _MyAddRecipeState extends State<MyAddRecipe> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add My Recipe'),
+        title: Text('Agregar platillo'),
       ),
       body: ModalProgressHUD(
         inAsyncCall: _isInAsyncCall,
@@ -212,20 +215,20 @@ class _MyAddRecipeState extends State<MyAddRecipe> {
                     )
                   ],
                 ),
-                Text('click para cambiar foto'),
+                Text('Click para cambiar foto'),
                 Padding(
                   padding: EdgeInsets.only(top: 10),
                 ),
                 TextFormField(
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'name',
+                    hintText: 'Nombre del platillo',
                     fillColor: Colors.grey[300],
                     filled: true,
                   ),
                   validator: (value) {
                     if (value.isEmpty) {
-                      return 'Please enter some text';
+                      return 'Por favor ingresa el nombre del platillo';
                     }
                   },
                   onSaved: (value) => name = value.trim(),
@@ -234,23 +237,37 @@ class _MyAddRecipeState extends State<MyAddRecipe> {
                   maxLines: 5,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'recipe',
+                    hintText: 'Descripcion del platillo',
                     fillColor: Colors.grey[300],
                     filled: true,
                   ),
                   validator: (value) {
                     if (value.isEmpty) {
-                      return 'Please enter some recipe';
+                      return 'Por favor ingresa la descripcion del platillo';
                     }
                   },
                   onSaved: (value) => recipe = value,
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Precio del platillo',
+                    fillColor: Colors.grey[300],
+                    filled: true,
+                  ),
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return 'Por favor ingresa el precio';
+                    }
+                  },
+                  onSaved: (value) => price = value,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     RaisedButton(
                       onPressed: _enviar,
-                      child: Text('Create', style: TextStyle(color: Colors.white)),
+                      child: Text('Crear platillo', style: TextStyle(color: Colors.white)),
                       color: Colors.green,
                     ),
                   ],)

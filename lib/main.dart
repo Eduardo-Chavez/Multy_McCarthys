@@ -3,7 +3,7 @@ import 'package:multymccarthys/login_admin/root_page.dart';
 import 'package:multymccarthys/auth/auth.dart';
  
 void main() => runApp(MyApp());
- 
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         //brightness: Brightness.dark,
         primarySwatch: Colors.blue,),
-      home: RootPage(auth: Auth(),),    
+      home: RootPage(auth: Auth(),),     
     );
   }
 }
